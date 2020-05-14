@@ -5,19 +5,17 @@ import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import { createStore } from "redux";
 import allReducers from "./reducers";
-//connect store with app
+//connect store with app - app Subscribe
 import { Provider } from "react-redux";
+import rootReduder from "./reducers/rootReducer";
 
-const store = createStore(
-  allReducers,
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-);
+const store = createStore(allReducers);
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
       <App />
-    </Provider>
+    </Provider>{" "}
   </React.StrictMode>,
   document.getElementById("root")
 );
